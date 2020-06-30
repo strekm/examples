@@ -1,0 +1,27 @@
+---
+apiVersion: authentication.istio.io/v1alpha1
+kind: Policy
+metadata:
+  name: default
+  namespace: dapr-with-dr-demo
+spec:
+  peers:
+    - mtls:
+        mode: PERMISSIVE
+---
+#apiVersion: authentication.istio.io/v1alpha1
+#kind: Policy
+#metadata:
+#  name: default
+#  namespace: dapr-system
+#spec:
+#  peers:
+#    - mtls:
+#        mode: PERMISSIVE
+#  targets:
+#    - name: nodeapp-with-dr-dapr
+#      ports:
+#        - number: 80
+#        - number: 50001
+#        - number: 50002
+#        - number: 9090

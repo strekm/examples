@@ -1,0 +1,101 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: dapr-sentry-dr
+  namespace: dapr-system
+spec:
+  host: dapr-sentry.dapr-system.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: DISABLE
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: dapr-api-dr
+  namespace: dapr-system
+spec:
+  host: dapr-api.dapr-system.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: DISABLE
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: dapr-placement-dr
+  namespace: dapr-system
+spec:
+  host: dapr-placement.dapr-system.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: DISABLE
+---
+#---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: DestinationRule
+#metadata:
+#  name: mst
+#  namespace: dapr-with-dr-demo
+#spec:
+#  host: "*.dapr-with-dr-demo.svc.cluster.local"
+#  trafficPolicy:
+#    tls:
+#      mode: DISABLE
+#---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: DestinationRule
+#metadata:
+#  name: dapr-sentry-dr
+#  namespace: dapr-system
+#spec:
+#  host: dapr-sentry.dapr-system.svc.cluster.local
+#  trafficPolicy:
+#    portLevelSettings:
+#      - port:
+#          number: 80
+#        tls:
+#          mode: DISABLE
+#---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: DestinationRule
+#metadata:
+#  name: dapr-api-dr
+#  namespace: dapr-system
+#spec:
+#  host: dapr-api.dapr-system.svc.cluster.local
+#  trafficPolicy:
+#    portLevelSettings:
+#      - port:
+#          number: 80
+#        tls:
+#          mode: DISABLE
+#---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: DestinationRule
+#metadata:
+#  name: dapr-placement-dr
+#  namespace: dapr-system
+#spec:
+#  host: dapr-placement.dapr-system.svc.cluster.local
+#  trafficPolicy:
+#    portLevelSettings:
+#      - port:
+#          number: 80
+#        tls:
+#          mode: DISABLE
+#---
+#apiVersion: networking.istio.io/v1alpha3
+#kind: DestinationRule
+#metadata:
+#  name: redis-master-dr
+#  namespace: dapr-redis
+#spec:
+#  host: redis-master.dapr-redis.svc.cluster.local
+#  trafficPolicy:
+#    portLevelSettings:
+#      - port:
+#          number: 80
+#        tls:
+#          mode: DISABLE
